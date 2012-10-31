@@ -15,24 +15,32 @@
     <body>
 
         <ul class="nav nav-pills">
-            <li class="active">
+            <li>
                 <a href="default.htm">Home</a>
             </li>
-            <li><a href="contacts.htm">Contacts</a></li>
+            <li class="active"><a href="contacts.htm">Contacts</a></li>
             <li><a href="report.htm">Report</a></li>
             
         </ul>
 
+        <ul class="breadcrumb">
+          <li><a href="default.htm">Home</a> <span class="divider">/</span></li>
+          <li><a href="contacts.htm">Contacts</a> <span class="divider">/</span></li>
+          <li class="active">Contact Deleted</li>
+        </ul>
+
         <div class="row-fluid">
             <div class="span12">
-                <div class="well">
-                    <h4>Welcome to the Contact Manager</h4>
+                <div class="hero-unit">
+                    <h1>Contact Deleted Successfully</h1>
+                    <p>What would you like to do next?</p>
+                    <div class="alert">
+                        <strong>Extra Info!</strong> 7 notes were deleted along with this contact.
+                    </div>
                     <p>
-                        Manage your contacts and leave notes on your communications with them.
+                        <a class="btn btn-large" href="contacts.htm">Find a Contact</a>
+                        <a class="btn btn-large" href="report.htm">View Daily Report</a>
                     </p>
-                    <a href="contacts.htm" class="btn">Find a Contact</a>
-                    <a href="newcontact.htm" class="btn">Create a New Contact</a>
-                    <a href="report.htm" class="btn">View Report</a>
                 </div>
             </div>
         </div>
@@ -41,7 +49,7 @@
             <div class="span10 offset1 interfacenotes">
                 <blockquote>
                     <p>Interface Notes</p>
-                    <small>The entry point of the software. Navigation reflects initial location and links to primary entities. The initial page should provide direct access to the most common tasks.</small>
+                    <small></small>
                 </blockquote>
             </div>
         </div>
