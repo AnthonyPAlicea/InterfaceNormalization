@@ -28,6 +28,12 @@
           <li class="active">Contacts</li>
         </ul>
 
+        <div class="alert alert-block" id="messagearea" style="display: none;">
+            <button type="button" class="close" data-action="closemessage">×</button>
+            <h4>Message</h4>
+            <span id="messagecontent"></span>
+        </div>
+
         <div class="row-fluid">
             <div class="span12">
                 <div>
@@ -62,33 +68,40 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><a href="#" class="btn editcontact" title="Edit This Contact"><i class="icon-edit"></i></a>&nbsp;<a href="#addNote" class="btn" title="Add a Note" role="button" data-toggle="modal"><i class="icon-file"></i></a>&nbsp;<a href="#reviewNotes" class="btn" title="Review Notes" role="button" data-toggle="modal"><i class="icon-folder-open"></i></a>&nbsp;<a href="#deleteNote" class="btn btn-danger" title="Delete Contact"><i class="icon-remove icon-white"></i></a></td>
-                                        <td>Doe</td>
-                                        <td>John</td>
-                                        <td>555-555-1111</td>
+                                    <tr data-type="datarow">
+                                        <td><a href="#" class="btn" data-action="editcontact" title="Edit This Contact"><i class="icon-edit"></i></a>&nbsp;<a href="#addNote" class="btn" title="Add a Note" role="button" data-toggle="modal"><i class="icon-file"></i></a>&nbsp;<a href="#reviewNotes" class="btn" title="Review Notes" role="button" data-toggle="modal"><i class="icon-folder-open"></i></a>&nbsp;<a href="#deleteNote" class="btn btn-danger" data-action="delete" title="Delete Contact"><i class="icon-remove icon-white"></i></a></td>
+                                        <td class="lastName">Doe</td>
+                                        <td class="firstName">John</td>
+                                        <td class="phoneNumber">555-555-1111</td>
                                         <td>3</td>
                                     </tr>
-                                    <tr>
-                                        <td><a href="#" class="btn editcontact" title="Edit This Contact"><i class="icon-edit"></i></a>&nbsp;<a href="#addNote" class="btn" title="Add a Note" role="button" data-toggle="modal"><i class="icon-file"></i></a>&nbsp;<a href="#reviewNotes" class="btn" title="Review Notes" role="button" data-toggle="modal"><i class="icon-folder-open"></i></a>&nbsp;<a href="#deleteNote" class="btn btn-danger" title="Delete Contact"><i class="icon-remove icon-white"></i></a></td>
-                                        <td>Morris</td>
-                                        <td>Jane</td>
-                                        <td>555-555-2222</td>
+                                    <tr data-type="datarow">
+                                        <td><a href="#" class="btn" data-action="editcontact" title="Edit This Contact"><i class="icon-edit"></i></a>&nbsp;<a href="#addNote" class="btn" title="Add a Note" role="button" data-toggle="modal"><i class="icon-file"></i></a>&nbsp;<a href="#reviewNotes" class="btn" title="Review Notes" role="button" data-toggle="modal"><i class="icon-folder-open"></i></a>&nbsp;<a href="#deleteNote" class="btn btn-danger" data-action="delete" title="Delete Contact"><i class="icon-remove icon-white"></i></a></td>
+                                        <td class="lastName">Morris</td>
+                                        <td class="firstName">Jane</td>
+                                        <td class="phoneNumber">555-555-2222</td>
                                         <td>2</td>
                                     </tr>
-                                    <tr>
-                                        <td><a href="#" class="btn editcontact" title="Edit This Contact"><i class="icon-edit"></i></a>&nbsp;<a href="#addNote" class="btn" title="Add a Note" role="button" data-toggle="modal"><i class="icon-file"></i></a>&nbsp;<a href="#reviewNotes" class="btn" title="Review Notes" role="button" data-toggle="modal"><i class="icon-folder-open"></i></a>&nbsp;<a href="#deleteNote" class="btn btn-danger" title="Delete Contact"><i class="icon-remove icon-white"></i></a></td>
-                                        <td>Richards</td>
-                                        <td>Joseph</td>
-                                        <td>555-555-3333</td>
+                                    <tr data-type="datarow">
+                                        <td><a href="#" class="btn" data-action="editcontact" title="Edit This Contact"><i class="icon-edit"></i></a>&nbsp;<a href="#addNote" class="btn" title="Add a Note" role="button" data-toggle="modal"><i class="icon-file"></i></a>&nbsp;<a href="#reviewNotes" class="btn" title="Review Notes" role="button" data-toggle="modal"><i class="icon-folder-open"></i></a>&nbsp;<a href="#deleteNote" class="btn btn-danger" data-action="delete" title="Delete Contact"><i class="icon-remove icon-white"></i></a></td>
+                                        <td class="lastName">Richards</td>
+                                        <td class="firstName">Joseph</td>
+                                        <td class="phoneNumber">555-555-3333</td>
                                         <td>5</td>
                                     </tr>
-                                    <tr>
-                                        <td><a href="#" class="btn editcontact" title="Edit This Contact"><i class="icon-edit"></i></a>&nbsp;<a href="#addNote" class="btn" title="Add a Note" role="button" data-toggle="modal"><i class="icon-file"></i></a>&nbsp;<a href="#reviewNotes" class="btn" title="Review Notes" role="button" data-toggle="modal"><i class="icon-folder-open"></i></a>&nbsp;<a href="#deleteNote" class="btn btn-danger" title="Delete Contact"><i class="icon-remove icon-white"></i></a></td>
-                                        <td>Wallace</td>
-                                        <td>Sarah</td>
-                                        <td>555-555-8888</td>
+                                    <tr data-type="datarow">
+                                        <td><a href="#" class="btn" data-action="editcontact" title="Edit This Contact"><i class="icon-edit"></i></a>&nbsp;<a href="#addNote" class="btn" title="Add a Note" role="button" data-toggle="modal"><i class="icon-file"></i></a>&nbsp;<a href="#reviewNotes" class="btn" title="Review Notes" role="button" data-toggle="modal"><i class="icon-folder-open"></i></a>&nbsp;<a href="#deleteNote" class="btn btn-danger" data-action="delete" title="Delete Contact"><i class="icon-remove icon-white"></i></a></td>
+                                        <td class="lastName">Wallace</td>
+                                        <td class="firstName">Sarah</td>
+                                        <td class="phoneNumber">555-555-8888</td>
                                         <td>7</td>
+                                    </tr>
+                                    <tr id="editrow" style="display: none;">
+                                        <td><a href="#" class="btn btn-primary" data-action="savecontact" title="Save Contact"><i class="icon-ok icon-white"></i></a></td>
+                                        <td><input type="text" class="input-medium" id="editLastName" /></td>
+                                        <td><input type="text" class="input-medium" id="editFirstName" /></td>
+                                        <td><input type="text" class="input-medium" id="editPhoneNumber" /></td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -124,7 +137,7 @@
           </div>
           <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            <button class="btn btn-primary">Save New Note</button>
+            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Save New Note</button>
           </div>
         </div>
 
@@ -170,7 +183,7 @@
         <div class="row-fluid">
             <div class="span12">
                 <div>
-                    <form class="form-horizontal" action="confirmnewcontact.htm">
+                    <form class="form-horizontal">
                         <div class="control-group">
                             <label class="control-label" for="firstName">First Name</label>
                             <div class="controls">
@@ -191,7 +204,7 @@
                         </div>
                         <div class="control-group">
                             <div class="controls">
-                              <button type="submit" class="btn">Save New Contact</button>
+                              <button type="button" class="btn" id="savenewcontact">Save New Contact</button>
                               <br />
                               <small>You can add notes to this contact after creating it.</small>
                             </div>
@@ -214,5 +227,73 @@
         <script>window.jQuery || document.write('<script src="../js/jquery-1.8.2.min.js"><\/script>')</script>
 
         <script src="../js/bootstrap.min.js"></script>
+        <script>
+
+            $.fn.swap = function (other) {
+                $(this).replaceWith($(other).after($(this).clone(true)));
+            };
+
+            function setMessage(message) {
+
+                $("#messagecontent").html(message);
+                $("#messagearea").show();
+
+            }
+
+            function hideMessage() {
+
+                $("#messagearea").hide();
+
+            }
+
+            $("[data-action='delete']").click(function () {
+
+                if (confirm("Are you sure you wish to delete this contact?\n\nThis cannot be undone.")) {
+
+                    setMessage("Contact Has Been Deleted.");
+
+                }
+
+            });
+
+            $("#savenewcontact").click(function () {
+
+                setMessage("New Contact Has Been Created.");
+
+            });
+
+            $("[data-action='closemessage']").click(function () {
+
+                hideMessage();
+
+            });
+
+            $("[data-action='editcontact']").click(function () {
+
+                // set values
+                $("#editFirstName").val($(this).parent().parent().children(".firstName").html());
+                $("#editLastName").val($(this).parent().parent().children(".lastName").html());
+                $("#editPhoneNumber").val($(this).parent().parent().children(".phoneNumber").html());
+
+                // swap rows
+                $(this).parent().parent().hide();
+                $(this).parent().parent().swap($("#editrow"));
+                $("#editrow").show();
+
+                $("[data-action='editcontact']").hide();
+            });
+
+            $("[data-action='savecontact']").click(function () {
+
+                // save contact
+                $(this).parent().parent().hide();
+                $(this).parent().parent().swap($("tr[data-type='datarow']:hidden"));
+                $("tr[data-type='datarow']:hidden").show();
+
+                $("[data-action='editcontact']").show();
+
+                setMessage("Contact Has Been Updated.");
+            });
+        </script>
     </body>
 </html>
