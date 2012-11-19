@@ -3,6 +3,8 @@
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-weight: 400;
     padding: 25px;
+    width: 980px;
+    margin: 0 auto;
 }
 
 .well-note {
@@ -45,4 +47,10 @@
 
 .centertext {
     text-align: center;
+}
+
+/* for now, no interface notes */
+.interfacenotes
+{
+    display: none !important;
 }
